@@ -1,0 +1,13 @@
+{
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "extends": [
+    "plugin:prettier/recommended",
+    "plugin:jest-playwright/recommended"
+  ]
+}
