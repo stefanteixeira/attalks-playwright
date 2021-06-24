@@ -36,3 +36,20 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+      
+      - name: Run tests
+        run: yarn test
+
+      - name: Save Jest HTML report
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: jest-report
+          path: reports
+
+      - name: Save screenshots in case of failure
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: failure-screenshots
+          path: screenshots

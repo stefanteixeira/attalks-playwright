@@ -9,6 +9,7 @@ class CustomEnvironment extends PlaywrightEnvironment {
   }
 
   async teardown() {
+    await this.global.page.waitForTimeout(2000)
     await super.teardown()
   }
 
